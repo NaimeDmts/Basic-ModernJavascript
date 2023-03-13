@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+<body>
+
+    <script>
+
+        const msj = ["benim", "adım", "Naime", "Damataşı"];
+
+        // let sonuc = "";
+        // for(let x of msj){
+        //     sonuc += x + " ";
+        // }
+        // console.log(sonuc);
+
+        console.log(...msj);
+
+        const dizi1 = ["bir", "iki"];
+        const dizi2 = ["üç", "dört"];
+
+        // const dizi3 = [dizi1,dizi2];
+        // const dizi3 = [...dizi1,...dizi2];
+        const dizi3 = [...dizi1,...dizi2, "beş", "altı"];
+
+        console.log(dizi3);
+
+        const sayilar1 = [1 ,2, 3];
+        //const sayilar2 = sayilar1; //referans copy
+
+        const sayilar2 = [...sayilar1]; //value copy
+
+        // sayilar1[0] = 10;
+        sayilar2[0] = 10;
+
+        console.log(sayilar1,sayilar2);
+
+        const user = {
+            username: "Naime",
+            email:"naime.dmts@gmail.com"
+        }
+
+        const address = {
+            username: "Damataşı",
+            city: "İstanbul"
+        }
+
+        console.log({...user, ...address});
+
+        //rest parameters
+
+        function toplam(...args){
+            let sonuc = 0;
+
+            for(let x of args){
+                sonuc += x;
+            }
+            return sonuc;
+        }
+        console.log(toplam(5,7,12));
+        console.log(toplam(4,18));
+
+        function bilgileriGoster(ad, soyad, ...adres){
+            console.log(ad,soyad,adres);
+        }
+
+        console.log(bilgileriGoster("Naime", "Damataşı", "İstanbul", "Başakşehir"));
+
+    </script>
+</body>
+</html>
