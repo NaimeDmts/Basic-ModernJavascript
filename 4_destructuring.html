@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    
+    <script>
+
+        //array destructuring
+        let name = ["Naime","Damataşı","İstanbul","Başakşehir"];
+
+        // let firstName = name[0];
+        // let lastName = name[1];
+
+        // let [firtName, lastName] = name;
+        // let [firtName, lastName] = "Naime Damataşı".split(" ");
+
+         let [firtName, lastName, ...adres] = name;
+
+        console.log(firtName, lastName,adres);
+
+        //object destructuring
+
+        let urun = {
+            marka: "Apple",
+            model: "Iphone 13",
+            fiyat: 19000,
+           
+        }
+
+        let {marka,model,fiyat, satisDurumu=false} = urun;
+        console.log (marka,model,fiyat,satisDurumu);
+
+        function urunGoster(obj){
+            let {marka,model,fiyat, satisDurumu=false} = obj;
+            console.log (marka,model,fiyat,satisDurumu);
+        }
+        urunGoster(urun);
+
+    </script>
+</body>
+</html>
