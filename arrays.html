@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    
+    <script>
+        const sayilar =[1,5,7,2,67,30];
+      
+        // const teksayilar = [];
+        // for(let sayi of sayilar){
+        //     if(sayi % 2 == 1){
+        //         teksayilar.push(sayi);
+        //     }
+        // }
+         
+        //ES6
+
+        // const tekSayiKontrol = (sayi) => sayi % 2 == 1;
+        // const teksayilar = sayilar.filter(tekSayiKontrol);
+
+        const teksayilar = sayilar.filter( (sayi) => sayi % 2 == 1 );
+        console.log(teksayilar);
+
+        const teksayiKontrol = sayilar.map( (sayi) => sayi % 2 == 1 );        
+        console.log(teksayiKontrol);
+
+        const urunler = [
+            {urunAdi: "Iphone11", fiyat: 12000},
+            {urunAdi: "Iphone12", fiyat: 15000},
+            {urunAdi: "Iphone13", fiyat: 18000},
+            {urunAdi: "Iphone13 pro", fiyat: 25000}
+        ];
+
+        // const urunListesi = urunler.map(urun => urun);
+        const urunListesi = urunler.map(urun => urun.urunAdi);
+        console.log(urunListesi);
+
+        // const urunFiyatFiltre = urunler.filter(urun => urun.fiyat > 15000);
+        // console.log(urunFiyatFiltre);
+
+        // const urunFiyatFiltreAd = urunFiyatFiltre.map(urun => urun.urunAdi);       
+        // console.log(urunFiyatFiltreAd);
+
+        const urunFiyatFiltre = urunler.filter(urun => urun.fiyat > 15000).map(urun => urun.urunAdi);
+        console.log(urunFiyatFiltre);
+
+        const bulunanIlkDeger = urunler.find(urun => urun.fiyat > 12000);
+        console.log(bulunanIlkDeger);
+
+        const bulunanIlkDegerIndex = urunler.findIndex(urun => urun.fiyat > 18000);
+        console.log(bulunanIlkDegerIndex);
+
+    </script>
+</body>
+</html>
