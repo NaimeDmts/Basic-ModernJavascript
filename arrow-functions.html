@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    
+    <script>
+
+        //ES5
+
+        // function selamlamaES5(){
+        //     console.log("merhaba");
+        // }
+
+        var selamlamaES5 = function(isim){
+            console.log("merhaba " + isim);
+        }
+
+        selamlamaES5("Naime");
+
+        // ES6 - arrow function
+
+        // const selamlamaES6 = () => console.log("merhaba"); //tek satır kod varsa parantez kullanılmazsa hata olmaz.
+        const selamlamaES6 = (isim) => { console.log("merhaba " + isim); }
+        selamlamaES6("Yavuzhan");
+
+        //ES5
+
+        var toplamES5 = function(a, b){
+            return a + b;
+        }
+
+        var sonucES5 = toplamES5 (27,11);
+        console.log(sonucES5);
+
+        //ES6
+
+        const toplamES6 = (a,b) => a + b;
+
+        var sonucES6 = toplamES6(14,11);
+        console.log(sonucES6);
+    </script>
+</body>
+</html>
