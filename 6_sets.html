@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sets</title>
+</head>
+<body>
+    
+    <script>
+
+        const sayilar = new Set([1,2,3]);
+
+        sayilar.add(4);
+        sayilar.add(5);
+        sayilar.add("6");
+
+        const dizi = [...sayilar];
+
+        console.log(dizi);
+
+        sayilar.delete(3);
+        console.log(sayilar.has(6));
+        // sayilar.clear();
+
+        console.log(sayilar.values());
+
+        for(let s of sayilar.values()){
+            console.log(s);
+        }
+
+        console.log(sayilar);
+
+        for(let s of sayilar){
+            console.log(s);
+        }
+        
+    </script>
+</body>
+</html>
