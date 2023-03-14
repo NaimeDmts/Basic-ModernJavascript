@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+
+    <script>
+
+        // function constructor
+
+        function KisiES5(ad, meslek, dogumYili){
+            this.ad = ad;
+            this.meslek = meslek;
+            this.dogumYili = dogumYili;
+            // this.yasHesapla = function(){
+            //     let tarih = new Date().getFullYear();
+            //     return tarih - this.dogumYili;
+            // }
+        }
+
+        KisiES5.prototype.yasHesapla = function(){
+            let tarih = new Date().getFullYear();
+            return tarih - this.dogumYili;
+        }
+
+        let naime = new KisiES5 ("Naime Damataşı", "Frontend Developer", 1996);
+        let yavuzhan = new KisiES5 ("Yavuzhan Tepebaşı", "Doktor", 1997);
+
+        console.log(naime.yasHesapla());
+        console.log(yavuzhan.yasHesapla());
+
+        // class
+
+        class KisiES6{
+            constructor(ad, meslek, dogumYili){
+                this.ad = ad;
+                this.meslek = meslek;
+                this.dogumYili = dogumYili;
+                console.log("Nesne oluşturuldu")
+            }
+
+            yasHesapla(){
+                let tarih = new Date().getFullYear();
+                return tarih - this.dogumYili;
+            }
+        }
+        let ali = new KisiES6("Damataşı", "Developer", 1996);
+        let veli = new KisiES6 ("Tepebaşı", "Doktor", 1997);
+
+        console.log(ali.yasHesapla());
+        console.log(veli.yasHesapla());
+
+    </script>
+    
+</body>
+</html>
